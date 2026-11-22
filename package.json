@@ -1,0 +1,29 @@
+{
+  "name": "uas-pemdas",
+  "version": "1.0.0",
+  "description": "Project UAS_Pemrograman Dasar_Kelompok 8_T1B",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauravirginia/UAS-Pemdas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mauravirginia/UAS-Pemdas/issues"
+  },
+  "homepage": "https://github.com/mauravirginia/UAS-Pemdas#readme",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/readline-sync": "^1.4.8",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
