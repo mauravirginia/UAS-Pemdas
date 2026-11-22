@@ -1,6 +1,6 @@
 # Sistem Kasir Tiket Konser Musik "Nikmati Suara" (CLI)
 
-**Kelas / Kelompok:** T1[A/B/C/D/E/F] / Kelompok-[NN]  
+**Kelas / Kelompok:** T1B / Kelompok-8ASIK 
 **Link Repository:** https://github.com/mauravirginia/UAS-Pemdas
 **Mata Kuliah:** Pemrograman Dasar  
 **Tahun Akademik:** 2026/2027  
