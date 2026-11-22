@@ -1,7 +1,7 @@
 # Sistem Kasir Tiket Konser Musik "Nikmati Suara" (CLI)
 
 **Kelas / Kelompok:** T1[A/B/C/D/E/F] / Kelompok-[NN]  
-**Link Repository:** https://github.com/[username-pemilik]/[nama-repo]  
+**Link Repository:** https://github.com/mauravirginia/UAS-Pemdas
 **Mata Kuliah:** Pemrograman Dasar  
 **Tahun Akademik:** 2026/2027  
 
@@ -11,9 +11,9 @@
 
 | No. | Nama Anggota | NIM | Akun GitHub | Tugas dan Tanggung Jawab |
 |---|---|---|---|---|
-| 1 | Jon Kevin Prayoga Purba | `[NIM Anggota 1]` | `[@username_1]` | Bertanggung jawab dalam pengelolaan repository GitHub, konfigurasi awal project (`.gitignore`, `tsconfig.json`, `package.json`), serta pengembangan fitur **Create** & **Update** transaksi/tiket. |
-| 2 | Trinanda Grace Tampubolon | `[NIM Anggota 2]` | `[@username_2]` | Bertanggung jawab dalam penyusunan proposal, analisis permasalahan, identifikasi entitas dan properti data, serta pengembangan fitur **Read** & **Search** riwayat pemesanan. |
-| 3 | Maura Virginia Alfareza | `263140701111001` | `[@username_3]` | Bertanggung jawab dalam dokumentasi project (`README.md` & draft laporan), pencatatan kontribusi anggota, pengembangan fitur **Delete** & kalkulasi biaya, serta pengujian program. |
+| 1 | Maura Virginia Alfareza | `263140701111001` | `@mauravirginia` | Bertanggung jawab dalam pengelolaan repository GitHub, konfigurasi awal project (`.gitignore`, `tsconfig.json`, `package.json`), analisis permasalahan, Dokumentasi project (`README.md` & draft laporan) serta pengembangan fitur **Create** & **Update** transaksi/tiket. |
+| 2 | Trinanda Grace Tampubolon | `263140700111046` | `@trinandagrace` | Bertanggung jawab dalam penyusunan proposal/ Laporan, identifikasi entitas dan properti data, serta pengembangan fitur **Read** & **Search** riwayat pemesanan. |
+| 3 | Jon Kevin Prayoga Purba | `2263140700111040` | `@KevinPrayogga7` | Bertanggung jawab dalam pencatatan kontribusi anggota, pengembangan fitur **Delete** & kalkulasi biaya, serta pengujian program bisa berjalan atau tidak. |
 
 ---
 
