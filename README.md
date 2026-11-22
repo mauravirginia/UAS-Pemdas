@@ -65,10 +65,10 @@ Pengembangan project dilakukan melalui beberapa tahapan:
 ## D. Progress Pengerjaan
 
 ### Progress 1
-- [ ] Membuat repository GitHub dengan visibilitas **Public**.
-- [ ] Menyiapkan struktur awal project (`.gitignore`, `tsconfig.json`, `package.json`, dan `src/index.ts`).
-- [ ] Menyiapkan program `"Hello console"` di `src/index.ts` dan memastikan dapat dijalankan oleh semua anggota.
-- [ ] Setiap anggota melakukan minimal 1 *commit* menggunakan akun GitHub masing-masing.
+- [X] Membuat repository GitHub dengan visibilitas **Public**.
+- [X] Menyiapkan struktur awal project (`.gitignore`, `tsconfig.json`, `package.json`, dan `src/index.ts`).
+- [X] Menyiapkan program `"Hello console/world"` di `src/index.ts` dan memastikan dapat dijalankan oleh semua anggota.
+- [X] Setiap anggota melakukan minimal 1 *commit* menggunakan akun GitHub masing-masing.
 - [ ] Melengkapi `README.md` awal (daftar anggota, NIM, akun GitHub, dan tabel pembagian tugas).
 - [ ] Mengunggah proposal & analisis awal (tema, deskripsi masalah, entitas & properti, fitur CRUD + Search, *decomposition* awal) pada `docs/` atau `README.md`.
 - [ ] Menyimpan draft awal laporan (Halaman Sampul, Sub-bab 1.1, 1.2 awal, dan rencana tabel kontribusi 3.2) di folder `docs/` pada *branch* `main`.
