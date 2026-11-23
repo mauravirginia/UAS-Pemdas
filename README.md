@@ -1,6 +1,6 @@
-# Sistem Kasir Tiket Konser Musik "Nikmati Suara" (CLI)
+# Sistem Kasir Tiket Konser Musik "Nikmati Suara" 
 
-**Kelas / Kelompok:** T1B / Kelompok-8ASIK 
+**Kelas / Kelompok:** T1B / Kelompok-8
 **Link Repository:** https://github.com/mauravirginia/UAS-Pemdas
 **Mata Kuliah:** Pemrograman Dasar  
 **Tahun Akademik:** 2026/2027  
@@ -13,7 +13,7 @@
 |---|---|---|---|---|
 | 1 | Maura Virginia Alfareza | `263140701111001` | `@mauravirginia` | Bertanggung jawab dalam pengelolaan repository GitHub, konfigurasi awal project (`.gitignore`, `tsconfig.json`, `package.json`), analisis permasalahan, Dokumentasi project (`README.md` & draft laporan) serta pengembangan fitur **Create** & **Update** transaksi/tiket. |
 | 2 | Trinanda Grace Tampubolon | `263140700111046` | `@trinandagrace` | Bertanggung jawab dalam penyusunan proposal/ Laporan, identifikasi entitas dan properti data, serta pengembangan fitur **Read** & **Search** riwayat pemesanan. |
-| 3 | Jon Kevin Prayoga Purba | `2263140700111040` | `@KevinPrayogga7` | Bertanggung jawab dalam pencatatan kontribusi anggota, pengembangan fitur **Delete** & kalkulasi biaya, serta pengujian program bisa berjalan atau tidak. |
+| 3 | Jon Kevin Prayoga Purba | `263140700111040` | `@KevinPrayogga7` | Bertanggung jawab dalam pencatatan kontribusi anggota, pengembangan fitur **Delete** & kalkulasi biaya, serta pengujian program bisa berjalan atau tidak. |
 
 ---
 
@@ -65,10 +65,10 @@ Pengembangan project dilakukan melalui beberapa tahapan:
 ## D. Progress Pengerjaan
 
 ### Progress 1
-- [ ] Membuat repository GitHub dengan visibilitas **Public**.
-- [ ] Menyiapkan struktur awal project (`.gitignore`, `tsconfig.json`, `package.json`, dan `src/index.ts`).
-- [ ] Menyiapkan program `"Hello console"` di `src/index.ts` dan memastikan dapat dijalankan oleh semua anggota.
-- [ ] Setiap anggota melakukan minimal 1 *commit* menggunakan akun GitHub masing-masing.
-- [ ] Melengkapi `README.md` awal (daftar anggota, NIM, akun GitHub, dan tabel pembagian tugas).
-- [ ] Mengunggah proposal & analisis awal (tema, deskripsi masalah, entitas & properti, fitur CRUD + Search, *decomposition* awal) pada `docs/` atau `README.md`.
-- [ ] Menyimpan draft awal laporan (Halaman Sampul, Sub-bab 1.1, 1.2 awal, dan rencana tabel kontribusi 3.2) di folder `docs/` pada *branch* `main`.
+- [X] Membuat repository GitHub dengan visibilitas **Public**.
+- [X] Menyiapkan struktur awal project (`.gitignore`, `tsconfig.json`, `package.json`, dan `src/index.ts`).
+- [X] Menyiapkan program `"Hello console/world"` di `src/index.ts` dan memastikan dapat dijalankan oleh semua anggota.
+- [X] Setiap anggota melakukan minimal 1 *commit* menggunakan akun GitHub masing-masing.
+- [X] Melengkapi `README.md` awal (daftar anggota, NIM, akun GitHub, dan tabel pembagian tugas).
+- [X] Mengunggah proposal & analisis awal (tema, deskripsi masalah, entitas & properti, fitur CRUD + Search, *decomposition* awal) pada `docs/` atau `README.md`.
+- [X] Menyimpan draft awal laporan (Halaman Sampul, Sub-bab 1.1, 1.2 awal, dan rencana tabel kontribusi 3.2) di folder `docs/` pada *branch* `main`.
