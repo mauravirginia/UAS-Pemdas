@@ -1,4 +1,4 @@
-# Sistem Kasir Tiket Konser Musik "Nikmati Suara" (CLI)
+# Sistem Kasir Tiket Konser Musik "Nikmati Suara" 
 
 **Kelas / Kelompok:** T1B / Kelompok-8ASIK 
 **Link Repository:** https://github.com/mauravirginia/UAS-Pemdas
@@ -13,7 +13,7 @@
 |---|---|---|---|---|
 | 1 | Maura Virginia Alfareza | `263140701111001` | `@mauravirginia` | Bertanggung jawab dalam pengelolaan repository GitHub, konfigurasi awal project (`.gitignore`, `tsconfig.json`, `package.json`), analisis permasalahan, Dokumentasi project (`README.md` & draft laporan) serta pengembangan fitur **Create** & **Update** transaksi/tiket. |
 | 2 | Trinanda Grace Tampubolon | `263140700111046` | `@trinandagrace` | Bertanggung jawab dalam penyusunan proposal/ Laporan, identifikasi entitas dan properti data, serta pengembangan fitur **Read** & **Search** riwayat pemesanan. |
-| 3 | Jon Kevin Prayoga Purba | `2263140700111040` | `@KevinPrayogga7` | Bertanggung jawab dalam pencatatan kontribusi anggota, pengembangan fitur **Delete** & kalkulasi biaya, serta pengujian program bisa berjalan atau tidak. |
+| 3 | Jon Kevin Prayoga Purba | `263140700111040` | `@KevinPrayogga7` | Bertanggung jawab dalam pencatatan kontribusi anggota, pengembangan fitur **Delete** & kalkulasi biaya, serta pengujian program bisa berjalan atau tidak. |
 
 ---
 
