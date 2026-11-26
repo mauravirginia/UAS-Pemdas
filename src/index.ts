@@ -195,11 +195,11 @@ function tentukanLoket(id: number): number {
 }
 
 // ---- TES SEMENTARA (hapus sebelum commit akhir) ----
-console.log(hitungBiayaAdmin('E-Wallet'));           // 2000
-console.log(hitungTotalBayar(1500000, 150000, 5000)); // 1655000
-console.log(cekTotalValid(1655000, 1500000));        // true
-console.log(hitungPersenHemat());                    // 25
-console.log(tentukanLoket(4));                       // 2
+// console.log(hitungBiayaAdmin('E-Wallet'));           // 2000
+// console.log(hitungTotalBayar(1500000, 150000, 5000)); // 1655000
+// console.log(cekTotalValid(1655000, 1500000));        // true
+// console.log(hitungPersenHemat());                    // 25
+// console.log(tentukanLoket(4));                       // 2
 
 
 // ===== BLOK 3: MENU UTAMA & LOOP (Kevin) =====
