@@ -1,3 +1,4 @@
+
 import readlineSync from 'readline-sync';
 // ===== BLOK 1: TIPE DATA & HARGA TIKET (Maura) =====
 
@@ -288,3 +289,7 @@ function mainMenu(): void {
 }
 
 mainMenu();
+
+console.log("hello console");
+console.log("mora coba1");
+
