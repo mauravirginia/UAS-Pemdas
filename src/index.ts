@@ -1,3 +1,4 @@
+import readlineSync from 'readline-sync';
 // ===== BLOK 1: TIPE DATA & HARGA TIKET (Maura) =====
 
 // Tipe pilihan kategori tiket (hanya 3 nilai ini yang boleh dipakai)
@@ -109,9 +110,9 @@ function isiDataAwal(): void {
 }
 
 // ---- TES SEMENTARA (hapus sebelum commit akhir) ----
-isiDataAwal();
-console.log(NAMA_FESTIVAL);
-console.log(daftarTransaksi);
+// isiDataAwal();
+// console.log(NAMA_FESTIVAL);
+// console.log(daftarTransaksi);
 
 
 // ===== BLOK 2: BIAYA ADMIN & TOTAL (Nanda) =====
@@ -202,5 +203,114 @@ function tentukanLoket(id: number): number {
 // console.log(tentukanLoket(4));                       // 2
 
 
-// ===== BLOK 3: MENU UTAMA & LOOP (Kevin) =====
 
+// ===== BLOK 3: MENU UTAMA & LOOP (Kevin) =====
+// Catatan: baris import di bawah ditaruh PALING ATAS file src/index.ts
+// (sebelum Blok 1), bukan di tengah file.
+
+// Fungsi menampilkan banner selamat datang (tanpa parameter, void)
+function tampilkanWelcome(): void {
+  console.log('==========================================');
+  console.log('   SELAMAT DATANG DI KASIR TIKET KONSER   ');
+  console.log('      FESTIVAL MUSIK NIKMATI SUARA        ');
+  console.log('==========================================');
+}
+
+// Fungsi menampilkan menu utama beserta jumlah data (tanpa parameter, void)
+function tampilkanMenuUtama(): void {
+  console.log('\n================ MENU UTAMA ==============');
+  console.log('1. Tambah Transaksi   (Create)');
+  console.log('2. Lihat Semua Data   (Read)');
+  console.log('3. Detail Transaksi   (Read by ID)');
+  console.log('4. Ubah Transaksi     (Update)');
+  console.log('5. Hapus Transaksi    (Delete)');
+  console.log('6. Cari Transaksi     (Search)');
+  console.log('0. Keluar');
+  console.log('==========================================');
+  // If: info jumlah data di memori
+  if (daftarTransaksi.length === 0) {
+    console.log('Belum ada data transaksi.');
+  } else {
+    console.log(`Jumlah data transaksi: ${daftarTransaksi.length}`);
+  }
+}
+
+// Fungsi menampilkan pesan fitur yang belum dikerjakan (void, dengan parameter)
+function tampilkanBelumTersedia(namaFitur: string, progress: number): void {
+  console.log(`\n[Info] Fitur ${namaFitur} akan dikerjakan pada Progress ${progress}.`);
+}
+
+// Fungsi-fungsi fitur: masih kerangka, diisi pada progress berikutnya (void)
+function tambahTransaksi(): void {
+  tampilkanBelumTersedia('Tambah Transaksi (Create)', 3);
+}
+function lihatSemuaTransaksi(): void {
+  tampilkanBelumTersedia('Lihat Semua Data (Read)', 4);
+}
+function detailTransaksi(): void {
+  tampilkanBelumTersedia('Detail Transaksi (Read by ID)', 4);
+}
+function ubahTransaksi(): void {
+  tampilkanBelumTersedia('Ubah Transaksi (Update)', 5);
+}
+function hapusTransaksi(): void {
+  tampilkanBelumTersedia('Hapus Transaksi (Delete)', 5);
+}
+function cariTransaksi(): void {
+  tampilkanBelumTersedia('Cari Transaksi (Search)', 6);
+}
+
+// Fungsi utama: menu berulang sampai pengguna memilih keluar (void)
+function main(): void {
+  isiDataAwal();       // memuat 5 data awal (fungsi dari Blok 1, Maura)
+  tampilkanWelcome();  // tampilkan banner
+
+  let jalan: boolean = true; // penanda program masih berjalan
+  // do...while: menu minimal tampil sekali, berulang selama jalan bernilai true
+  do {
+    tampilkanMenuUtama();
+    const pilihan: string = readlineSync.question('Pilih menu (0-6): ').trim();
+
+    // If: input kosong ditangani lebih dulu
+    if (pilihan === '') {
+      console.log('[!] Pilihan tidak boleh kosong, pilih 0 sampai 6.');
+      continue; // kembali ke awal loop
+    }
+
+    // Switch: mengarahkan pilihan menu ke fungsi yang sesuai
+    switch (pilihan) {
+      case '1':
+        tambahTransaksi();
+        break;
+      case '2':
+        lihatSemuaTransaksi();
+        break;
+      case '3':
+        detailTransaksi();
+        break;
+      case '4':
+        ubahTransaksi();
+        break;
+      case '5':
+        hapusTransaksi();
+        break;
+      case '6':
+        cariTransaksi();
+        break;
+      case '0':
+        jalan = false; // hentikan perulangan menu
+        break;
+      default:
+        // Input menu tidak valid (bukan 0-6)
+        console.log('[!] Pilihan menu tidak valid, pilih 0 sampai 6.');
+        break;
+    }
+  } while (jalan);
+
+  console.log('\n==========================================');
+  console.log('    Terima kasih sudah membeli tiket!     ');
+  console.log('==========================================');
+}
+
+// Menjalankan program (taruh di baris paling akhir file)
+main();
