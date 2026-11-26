@@ -114,5 +114,4 @@ console.log(NAMA_FESTIVAL);
 console.log(daftarTransaksi);
 
 
-// ===== BLOK 2: BIAYA ADMIN & TOTAL (Nanda) =====
 // ===== BLOK 3: MENU UTAMA & LOOP (Kevin) =====
