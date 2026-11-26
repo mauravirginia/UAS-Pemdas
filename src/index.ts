@@ -1,89 +1,80 @@
 import readlineSync from 'readline-sync';
 // ===== BLOK 1: TIPE DATA & HARGA TIKET (Maura) =====
 
-// Tipe pilihan kategori tiket (hanya 3 nilai ini yang boleh dipakai)
 type Kategori = 'VIP' | 'CAT 1' | 'Festival';
-// Tipe fase penjualan ('-' berarti kategori tersebut tidak punya fase)
 type Fase = 'Presale' | 'Normal' | '-';
-// Tipe metode pembayaran
 type Metode = 'Transfer Bank' | 'E-Wallet' | 'Kartu Kredit';
 
-// Entitas data transaksi tiket beserta propertinya
+
 interface TransaksiTiket {
-  id: number;           // ID unik transaksi (number)
-  nama: string;         // nama pembeli (string)
-  kategori: Kategori;   // kategori tiket
-  fase: Fase;           // fase penjualan
-  beliKaos: boolean;    // true jika beli kaos official (boolean)
-  metode: Metode;       // metode pembayaran
-  hargaTiket: number;   // harga tiket
-  hargaKaos: number;    // harga kaos (0 jika tidak beli)
-  biayaAdmin: number;   // biaya admin sesuai metode bayar
-  total: number;        // total yang harus dibayar
+  id: number;           
+  nama: string;         
+  kategori: Kategori;   
+  fase: Fase;           
+  beliKaos: boolean;    
+  metode: Metode;       
+  hargaTiket: number;   
+  hargaKaos: number;    
+  biayaAdmin: number;   
+  total: number;        
 }
 
-// Array penyimpan seluruh transaksi di memori
 const daftarTransaksi: TransaksiTiket[] = [];
-// Nama festival (nilai tetap, maka const)
 const NAMA_FESTIVAL: string = 'Festival Musik Nikmati Suara';
-// ID berikutnya akan berubah setiap ada data baru, maka pakai let
+
 let idBerikutnya: number = 1;
 
 // Fungsi menghitung harga tiket berdasarkan kategori dan fase (return number)
 function hitungHargaTiket(kategori: Kategori, fase: Fase): number {
-  let harga: number = 0; // penampung harga tiket
-  // Switch: memilih harga berdasarkan kategori
+  let harga: number = 0;
   switch (kategori) {
     case 'VIP':
-      // If-else: harga VIP tergantung fase penjualan
       if (fase === 'Presale') {
-        harga = 1500000; // VIP presale (promo)
+        harga = 1500000; 
       } else if (fase === 'Normal') {
-        harga = 2000000; // VIP normal
+        harga = 2000000;
       }
       break;
     case 'CAT 1':
-      harga = 1000000; // harga CAT 1
+      harga = 1000000; 
       break;
     case 'Festival':
-      harga = 500000; // harga Festival
+      harga = 500000;
       break;
     default:
-      harga = 0; // kategori tidak dikenal
+      harga = 0; 
       break;
   }
-  return harga; // mengembalikan harga tiket
+  return harga; 
 }
 
 // Fungsi menghitung harga kaos official (return number)
-// Nested 3 tingkat: switch -> if beliKaos -> if fase
 function hitungHargaKaos(kategori: Kategori, fase: Fase, beliKaos: boolean): number {
-  let harga: number = 0; // 0 jika tidak beli kaos
-  switch (kategori) {            // tingkat 1
+  let harga: number = 0; 
+  switch (kategori) {            
     case 'VIP':
-      if (beliKaos) {            // tingkat 2: apakah mau kaos
-        if (fase === 'Presale') { // tingkat 3: fase penjualan
-          harga = 150000;         // kaos harga presale
+      if (beliKaos) {            
+        if (fase === 'Presale') { 
+          harga = 150000;         
         } else {
-          harga = 250000;         // kaos harga normal
+          harga = 250000;         
         }
       }
       break;
     case 'CAT 1':
-      harga = 0; // kaos hanya untuk VIP
+      harga = 0;
       break;
     case 'Festival':
-      harga = 0; // kaos hanya untuk VIP
+      harga = 0;
       break;
     default:
       harga = 0;
       break;
   }
-  return harga; // mengembalikan harga kaos
+  return harga;
 }
 
 // Fungsi menambah satu data seed ke array (void, tanpa return)
-// Total dihitung sementara di sini; nanti boleh diganti fungsi buatan Nanda
 function tambahSeed(nama: string, kategori: Kategori, fase: Fase, beliKaos: boolean,
   metode: Metode, biayaAdmin: number): void {
   const hargaTiket: number = hitungHargaTiket(kategori, fase);
@@ -92,12 +83,13 @@ function tambahSeed(nama: string, kategori: Kategori, fase: Fase, beliKaos: bool
   total += hargaTiket;
   total += hargaKaos;
   total += biayaAdmin;
+
   // push: memasukkan data ke akhir array
   daftarTransaksi.push({
     id: idBerikutnya, nama, kategori, fase, beliKaos, metode,
     hargaTiket, hargaKaos, biayaAdmin, total,
   });
-  idBerikutnya += 1; // siapkan id berikutnya (compound +=)
+  idBerikutnya += 1;
 }
 
 // Fungsi mengisi 5 data awal (seed) (void, tanpa parameter)
@@ -109,7 +101,7 @@ function isiDataAwal(): void {
   tambahSeed('Eko Prasetyo', 'VIP', 'Normal', false, 'Transfer Bank', 5000);
 }
 
-// ---- TES SEMENTARA (hapus sebelum commit akhir) ----
+// ---- TES SEMENTARA ----
 // isiDataAwal();
 // console.log(NAMA_FESTIVAL);
 // console.log(daftarTransaksi);
@@ -117,12 +109,10 @@ function isiDataAwal(): void {
 
 // ===== BLOK 2: BIAYA ADMIN & TOTAL (Nanda) =====
 // ===== BLOK 2: BIAYA ADMIN, TOTAL BAYAR & OPERATOR (Nanda) =====
-// Catatan: blok ini memakai tipe Metode dan TransaksiTiket dari Blok 1 (Maura)
 
 // Fungsi menentukan biaya admin dari metode pembayaran (return number)
 function hitungBiayaAdmin(metode: Metode): number {
-  let biaya: number = 0; // penampung biaya admin
-  // Switch: 3 case + default, setiap case memakai break
+  let biaya: number = 0; 
   switch (metode) {
     case 'Transfer Bank':
       biaya = 5000;
@@ -134,68 +124,58 @@ function hitungBiayaAdmin(metode: Metode): number {
       biaya = 10000;
       break;
     default:
-      biaya = 0; // metode tidak dikenal
+      biaya = 0;
       break;
   }
-  return biaya; // mengembalikan biaya admin
+  return biaya; 
 }
 
 // Fungsi menghitung total bayar (return number)
-// Operator: + (tambah), += (compound), > >= (perbandingan), && (logika)
 function hitungTotalBayar(hargaTiket: number, hargaKaos: number, biayaAdmin: number): number {
-  let total: number = 0; // total dimulai dari nol
-  // If dengan 2 kondisi: hanya dihitung jika harga tiket valid dan admin tidak negatif
+  let total: number = 0;
   if (hargaTiket > 0 && biayaAdmin >= 0) {
-    total += hargaTiket; // tambah harga tiket
-    total += hargaKaos;  // tambah harga kaos
-    total += biayaAdmin; // tambah biaya admin
+    total += hargaTiket;
+    total += hargaKaos; 
+    total += biayaAdmin;
   }
-  return total; // mengembalikan total bayar
+  return total; 
 }
 
 // Fungsi memeriksa apakah total bayar masuk akal (return boolean)
-// Operator: < <= !== (perbandingan), || dan ! (logika)
 function cekTotalValid(total: number, hargaTiket: number): boolean {
-  // Tidak valid jika total negatif ATAU harga tiket nol/negatif
   const tidakValid: boolean = total < 0 || hargaTiket <= 0;
-  // Valid jika TIDAK tidak-valid, dan total bukan nol
   return !tidakValid && total !== 0;
 }
 
 // Fungsi menghitung selisih hemat VIP presale vs normal dalam persen (return number)
-// Operator: -= , *= , /= (compound)
 function hitungPersenHemat(): number {
   const hargaNormal: number = hitungHargaTiket('VIP', 'Normal');
   const hargaPresale: number = hitungHargaTiket('VIP', 'Presale');
   let hasil: number = hargaNormal;
-  hasil -= hargaPresale;  // hasil = selisih harga (compound -=)
-  hasil *= 100;           // dikali 100 untuk persen (compound *=)
-  hasil /= hargaNormal;   // dibagi harga normal (compound /=)
-  return hasil;           // contoh: 25 artinya hemat 25%
+  hasil -= hargaPresale;  
+  hasil *= 100;           
+  hasil /= hargaNormal;   
+  return hasil;           
 }
 
 // Fungsi menghitung rata-rata total transaksi (return number)
-// Operator: === (perbandingan), / (aritmatika), for...of (loop)
 function hitungRataRata(data: TransaksiTiket[]): number {
-  // Cegah pembagian dengan nol jika data kosong
   if (data.length === 0) {
     return 0;
   }
   let jumlah: number = 0;
-  // for...of: menjumlahkan total setiap transaksi
   for (const t of data) {
     jumlah += t.total;
   }
-  return Math.round(jumlah / data.length); // rata-rata = jumlah / banyak data
+  return Math.round(jumlah / data.length); 
 }
 
 // Fungsi menentukan nomor loket dari id (return number)
-// Operator: % (modulus) dan + (aritmatika)
 function tentukanLoket(id: number): number {
-  return (id % 3) + 1; // hasil bergiliran 1, 2, 3
+  return (id % 3) + 1;
 }
 
-// ---- TES SEMENTARA (hapus sebelum commit akhir) ----
+// ---- TES SEMENTARA ----
 // console.log(hitungBiayaAdmin('E-Wallet'));           // 2000
 // console.log(hitungTotalBayar(1500000, 150000, 5000)); // 1655000
 // console.log(cekTotalValid(1655000, 1500000));        // true
@@ -206,7 +186,6 @@ function tentukanLoket(id: number): number {
 
 // ===== BLOK 3: MENU UTAMA & LOOP (Kevin) =====
 // Catatan: baris import di bawah ditaruh PALING ATAS file src/index.ts
-// (sebelum Blok 1), bukan di tengah file.
 
 // Fungsi menampilkan banner selamat datang (tanpa parameter, void)
 function tampilkanWelcome(): void {
@@ -227,7 +206,7 @@ function tampilkanMenuUtama(): void {
   console.log('6. Cari Transaksi     (Search)');
   console.log('0. Keluar');
   console.log('==========================================');
-  // If: info jumlah data di memori
+
   if (daftarTransaksi.length === 0) {
     console.log('Belum ada data transaksi.');
   } else {
@@ -262,22 +241,19 @@ function cariTransaksi(): void {
 
 // Fungsi utama: menu berulang sampai pengguna memilih keluar (void)
 function mainMenu(): void {
-  isiDataAwal();       // memuat 5 data awal (fungsi dari Blok 1, Maura)
-  tampilkanWelcome();  // tampilkan banner
+  isiDataAwal();       
+  tampilkanWelcome();  
 
-  let jalan: boolean = true; // penanda program masih berjalan
-  // do...while: menu minimal tampil sekali, berulang selama jalan bernilai true
+  let jalan: boolean = true; 
   do {
     tampilkanMenuUtama();
     const pilihan: string = readlineSync.question('Pilih menu (0-6): ').trim();
 
-    // If: input kosong ditangani lebih dulu
     if (pilihan === '') {
       console.log('[!] Pilihan tidak boleh kosong, pilih 0 sampai 6.');
-      continue; // kembali ke awal loop
+      continue; 
     }
 
-    // Switch: mengarahkan pilihan menu ke fungsi yang sesuai
     switch (pilihan) {
       case '1':
         tambahTransaksi();
@@ -298,19 +274,17 @@ function mainMenu(): void {
         cariTransaksi();
         break;
       case '0':
-        jalan = false; // hentikan perulangan menu
+        jalan = false; 
         break;
       default:
-        // Input menu tidak valid (bukan 0-6)
+
         console.log('[!] Pilihan menu tidak valid, pilih 0 sampai 6.');
         break;
     }
   } while (jalan);
-
   console.log('\n==========================================');
   console.log('    Terima kasih sudah membeli tiket!     ');
   console.log('==========================================');
 }
 
-// Menjalankan program (taruh di baris paling akhir file)
 mainMenu();
