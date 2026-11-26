@@ -261,7 +261,7 @@ function cariTransaksi(): void {
 }
 
 // Fungsi utama: menu berulang sampai pengguna memilih keluar (void)
-function main(): void {
+function mainMenu(): void {
   isiDataAwal();       // memuat 5 data awal (fungsi dari Blok 1, Maura)
   tampilkanWelcome();  // tampilkan banner
 
@@ -313,4 +313,4 @@ function main(): void {
 }
 
 // Menjalankan program (taruh di baris paling akhir file)
-main();
+mainMenu();
