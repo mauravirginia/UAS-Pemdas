@@ -203,3 +203,4 @@ function tentukanLoket(id: number): number {
 
 
 // ===== BLOK 3: MENU UTAMA & LOOP (Kevin) =====
+
