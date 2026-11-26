@@ -14,7 +14,7 @@
 |---|---|---|---|---|---|
 | 1 | Maura Virginia Alfareza | `263140701111001` | `@mauravirginia` | `fitur-struktur-hitung-tiket` | Pengelolaan repository GitHub, konfigurasi awal project, dokumentasi (`README.md` & laporan), perancangan `interface TransaksiTiket`, fungsi kalkulasi harga tiket & kaos (`hitungHargaTiket`, `hitungHargaKaos`), serta pengembangan fitur **Create** & **Update**. |
 | 2 | Trinanda Grace Tampubolon | `263140700111046` | `@trinandagrace` | `fitur-hitung-admin-total` | Penyusunan proposal & laporan, fungsi kalkulasi biaya admin & total pembayaran (`hitungBiayaAdmin`, `hitungTotalBayar`), serta pengembangan fitur **Read** & **Search** riwayat pemesanan. |
-| 3 | Jon Kevin Prayoga Purba | `263140700111040` | `@KevinnPrayogga7` | `fitur-menu-utama` | Pencatatan kontribusi anggota, perancangan tampilan & *loop* menu utama (`tampilkanMenuUtama`, `main`), pengembangan fitur **Delete**, serta pengujian alur program. |
+| 3 | Jon Kevin Prayoga Purba | `263140700111040` | `@KevinnPrayogga7` | `fitur-menu-utama` | Pencatatan kontribusi anggota, perancangan tampilan & *loop* menu utama (`tampilkanMenuUtama`, `main`, `TambahTransaksi`), pengembangan fitur **Delete**, serta pengujian alur program. |
 
 ---
 
