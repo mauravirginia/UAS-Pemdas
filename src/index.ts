@@ -1,11 +1,4 @@
-console.log("hai mora");
-console.log ( "kevin gans");
-console.log("hello world");
-console.log("kevin aura ");
+// ===== BLOK 1: TIPE DATA & HARGA TIKET (Maura) =====
 
-
-
-console.log("mora nyoba")
-
-console.log("nanda cuns");
-
+// ===== BLOK 2: BIAYA ADMIN & TOTAL (Nanda) =====
+// ===== BLOK 3: MENU UTAMA & LOOP (Kevin) =====
