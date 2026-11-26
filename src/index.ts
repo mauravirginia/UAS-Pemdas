@@ -115,4 +115,91 @@ console.log(daftarTransaksi);
 
 
 // ===== BLOK 2: BIAYA ADMIN & TOTAL (Nanda) =====
+// ===== BLOK 2: BIAYA ADMIN, TOTAL BAYAR & OPERATOR (Nanda) =====
+// Catatan: blok ini memakai tipe Metode dan TransaksiTiket dari Blok 1 (Maura)
+
+// Fungsi menentukan biaya admin dari metode pembayaran (return number)
+function hitungBiayaAdmin(metode: Metode): number {
+  let biaya: number = 0; // penampung biaya admin
+  // Switch: 3 case + default, setiap case memakai break
+  switch (metode) {
+    case 'Transfer Bank':
+      biaya = 5000;
+      break;
+    case 'E-Wallet':
+      biaya = 2000;
+      break;
+    case 'Kartu Kredit':
+      biaya = 10000;
+      break;
+    default:
+      biaya = 0; // metode tidak dikenal
+      break;
+  }
+  return biaya; // mengembalikan biaya admin
+}
+
+// Fungsi menghitung total bayar (return number)
+// Operator: + (tambah), += (compound), > >= (perbandingan), && (logika)
+function hitungTotalBayar(hargaTiket: number, hargaKaos: number, biayaAdmin: number): number {
+  let total: number = 0; // total dimulai dari nol
+  // If dengan 2 kondisi: hanya dihitung jika harga tiket valid dan admin tidak negatif
+  if (hargaTiket > 0 && biayaAdmin >= 0) {
+    total += hargaTiket; // tambah harga tiket
+    total += hargaKaos;  // tambah harga kaos
+    total += biayaAdmin; // tambah biaya admin
+  }
+  return total; // mengembalikan total bayar
+}
+
+// Fungsi memeriksa apakah total bayar masuk akal (return boolean)
+// Operator: < <= !== (perbandingan), || dan ! (logika)
+function cekTotalValid(total: number, hargaTiket: number): boolean {
+  // Tidak valid jika total negatif ATAU harga tiket nol/negatif
+  const tidakValid: boolean = total < 0 || hargaTiket <= 0;
+  // Valid jika TIDAK tidak-valid, dan total bukan nol
+  return !tidakValid && total !== 0;
+}
+
+// Fungsi menghitung selisih hemat VIP presale vs normal dalam persen (return number)
+// Operator: -= , *= , /= (compound)
+function hitungPersenHemat(): number {
+  const hargaNormal: number = hitungHargaTiket('VIP', 'Normal');
+  const hargaPresale: number = hitungHargaTiket('VIP', 'Presale');
+  let hasil: number = hargaNormal;
+  hasil -= hargaPresale;  // hasil = selisih harga (compound -=)
+  hasil *= 100;           // dikali 100 untuk persen (compound *=)
+  hasil /= hargaNormal;   // dibagi harga normal (compound /=)
+  return hasil;           // contoh: 25 artinya hemat 25%
+}
+
+// Fungsi menghitung rata-rata total transaksi (return number)
+// Operator: === (perbandingan), / (aritmatika), for...of (loop)
+function hitungRataRata(data: TransaksiTiket[]): number {
+  // Cegah pembagian dengan nol jika data kosong
+  if (data.length === 0) {
+    return 0;
+  }
+  let jumlah: number = 0;
+  // for...of: menjumlahkan total setiap transaksi
+  for (const t of data) {
+    jumlah += t.total;
+  }
+  return Math.round(jumlah / data.length); // rata-rata = jumlah / banyak data
+}
+
+// Fungsi menentukan nomor loket dari id (return number)
+// Operator: % (modulus) dan + (aritmatika)
+function tentukanLoket(id: number): number {
+  return (id % 3) + 1; // hasil bergiliran 1, 2, 3
+}
+
+// ---- TES SEMENTARA (hapus sebelum commit akhir) ----
+// console.log(hitungBiayaAdmin('E-Wallet'));           // 2000
+// console.log(hitungTotalBayar(1500000, 150000, 5000)); // 1655000
+// console.log(cekTotalValid(1655000, 1500000));        // true
+// console.log(hitungPersenHemat());                    // 25
+// console.log(tentukanLoket(4));                       // 2
+
+
 // ===== BLOK 3: MENU UTAMA & LOOP (Kevin) =====
