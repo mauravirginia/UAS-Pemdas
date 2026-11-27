@@ -1,31 +1,32 @@
 # Sistem Kasir Tiket Konser Musik "Nikmati Suara"
 
 **Kelas / Kelompok:** T1B / Kelompok-8  
-**Link Repository:** https://github.com/mauravirginia/UAS-Pemdas  
+**Link Repository:** [https://github.com/mauravirginia/UAS-Pemdas](https://github.com/mauravirginia/UAS-Pemdas)  
 **Link Laporan (Google Docs):** [Buka Laporan UAS Kelompok 8](https://docs.google.com/document/d/1vSMgqZCG28D9ObFLMD45E0c3lVbPI5bb/edit?usp=sharing&ouid=116706816203598976258&rtpof=true&sd=true) | [Folder `docs/`](./docs/)  
 **Mata Kuliah:** Pemrograman Dasar  
 **Tahun Akademik:** 2026/2027  
 
 ---
 
-## A. Daftar Anggota & Pembagian Tugas Utama
+## A. Daftar Anggota & Pembagian Tugas Per Progress
 
-| No. | Nama Anggota | NIM | Akun GitHub | Branch Kerja (Progress 2) | Tanggung Jawab Utama & Fitur |
+### 1. Progress 1 — Setup Repository, Proposal, & Draf Laporan Awal (23 November 2026)
+
+| No. | Nama Anggota | NIM | Akun GitHub | Branch Kerja | Tugas dan Tanggung Jawab (Progress 1) |
 |---|---|---|---|---|---|
-| 1 | Maura Virginia Alfareza | `263140701111001` | `@mauravirginia` | `fitur-struktur-hitung-tiket` | Pengelolaan repository GitHub (`develop` & `main`), konfigurasi awal project, dokumentasi `README.md`, perancangan struktur data (`interface TransaksiTiket`) & fungsi kalkulasi harga tiket/kaos (`hitungHargaTiket`, `hitungHargaKaos`, `tambahSeed`, `isiDataAwal`), serta pengembangan fitur **Create** & **Update**. |
-| 2 | Trinanda Grace Tampubolon | `263140700111046` | `@trinandagrace` | `fitur-hitung-admin-total` | Perancangan dan pembuatan **Flowchart alur menu utama** (BAB II Gambar 2.1 & Sub-bab 2.2), implementasi fungsi kalkulasi biaya admin, total bayar, & operator (`hitungBiayaAdmin`, `hitungTotalBayar`, `cekTotalValid`, `hitungPersenHemat`, `hitungRataRata`, `tentukanLoket`), serta pengembangan fitur **Read** & **Search**. |
-| 3 | Jon Kevin Prayoga Purba | `263140700111040` | `@KevinnPrayogga7` | `fitur-menu-utama` | Penyusunan dan pembaruan **draf laporan** di folder `docs/` (BAB I Sub-bab 1.3–1.5, Tabel 3.1, Tabel Kontribusi 3.2, serta Screenshot No. 1), perancangan tampilan & *loop* menu utama (`tampilkanWelcome`, `tampilkanMenuUtama`, `mainMenu`), serta pengembangan fitur **Delete**. |
+| 1 | Maura Virginia Alfareza | `263140701111001` | `@mauravirginia` | `main` | Membuat repository GitHub public, menyiapkan konfigurasi awal project (`.gitignore`, `tsconfig.json`, `package.json`, `src/index.ts`), menyusun `README.md` awal, serta mengunggah draf laporan awal ke folder `docs/`. |
+| 2 | Trinanda Grace Tampubolon | `263140700111046` | `@trinandagrace` | `main` | Merumuskan analisis permasalahan, mengidentifikasi entitas serta properti data `TransaksiTiket`, dan menyusun draf proposal (BAB I Sub-bab 1.1 Deskripsi Masalah & 1.2 Decomposition Awal). |
+| 3 | Jon Kevin Prayoga Purba | `263140700111040` | `@KevinnPrayogga7` | `main` | Menjalankan uji coba program awal `"Hello console"` di lingkungan lokal serta menyusun rencana pembagian tugas pada Tabel Kontribusi Anggota (Sub-bab 3.2). |
 
-**Pembagian Tugas Anggota pada Progress 2 (Kolaborasi Branch per Fitur):**
-- **Maura (`@mauravirginia` — Branch `fitur-struktur-hitung-tiket`):**
-  - Mendefinisikan struktur data (`Kategori`, `Fase`, `Metode`, `interface TransaksiTiket`, dan array `daftarTransaksi`) serta mengimplementasikan fungsi bertipe & data awal (`hitungHargaTiket()`, `hitungHargaKaos()`, `tambahSeed()`, dan `isiDataAwal()`).
-  - Mengelola alur *Pull Request*, me-*review* dan menggabungkan *branch* anggota ke `develop`, melakukan *merge* final ke `main`, serta memperbarui `README.md`.
-- **Nanda (`@trinandagrace` — Branch `fitur-hitung-admin-total`):**
-  - Merancang dan membuat **Flowchart Alur Menu Utama** (termasuk *loop* menu hingga keluar dan validasi input) untuk **BAB II (Gambar 2.1)** pada laporan.
-  - Mengimplementasikan fungsi bertipe untuk kalkulasi biaya admin, total bayar, validasi, dan statistik operator (`hitungBiayaAdmin()`, `hitungTotalBayar()`, `cekTotalValid()`, `hitungPersenHemat()`, `hitungRataRata()`, dan `tentukanLoket()`).
-- **Kevin (`@KevinnPrayogga7` — Branch `fitur-menu-utama`):**
-  - Menyusun dan memperbarui **draf laporan di `docs/`** (melengkapi BAB I Sub-bab 1.3–1.5, penjelasan Sub-bab 2.2, pemetaan baris kode pada Tabel 3.1, pembaruan Tabel Kontribusi 3.2 dengan link PR, serta mengunggah file `.docx` terbaru ke `docs/`).
-  - Mengimplementasikan tampilan antarmuka (`tampilkanWelcome()`, `tampilkanMenuUtama()`), perulangan `do...while` pada `mainMenu()` dengan penanganan input tidak valid, kerangka fungsi CRUD + Search, serta mengambil **Screenshot No. 1**.
+---
+
+### 2. Progress 2 — Flowchart Menu Utama, Fondasi Materi UTS, & Kerangka Menu (27 November 2026)
+
+| No. | Nama Anggota | NIM | Akun GitHub | Branch Kerja | Tugas dan Tanggung Jawab (Progress 2) |
+|---|---|---|---|---|---|
+| 1 | Maura Virginia Alfareza | `263140701111001` | `@mauravirginia` | `fitur-struktur-hitung-tiket` | Perancangan struktur data (`Kategori`, `Fase`, `Metode`, `interface TransaksiTiket`, array `daftarTransaksi`), implementasi fungsi bertipe & data awal (`hitungHargaTiket`, `hitungHargaKaos`, `tambahSeed`, `isiDataAwal`), manajemen *Pull Request* (`develop` $\rightarrow$ `main`), serta pembaruan `README.md`. |
+| 2 | Trinanda Grace Tampubolon | `263140700111046` | `@trinandagrace` | `fitur-hitung-admin-total` | Perancangan dan pembuatan **Flowchart alur menu utama** (BAB II Gambar 2.1) serta implementasi fungsi bertipe untuk kalkulasi biaya admin, total bayar, validasi, dan statistik operator (`hitungBiayaAdmin`, `hitungTotalBayar`, `cekTotalValid`, `hitungPersenHemat`, `hitungRataRata`, `tentukanLoket`). |
+| 3 | Jon Kevin Prayoga Purba | `263140700111040` | `@KevinnPrayogga7` | `fitur-menu-utama` | Penyusunan dan pembaruan **draf laporan** di folder `docs/` (BAB I Sub-bab 1.3–1.5, Sub-bab 2.2, Tabel 3.1, Tabel Kontribusi 3.2), implementasi tampilan & *loop* menu utama (`tampilkanWelcome`, `tampilkanMenuUtama`, `mainMenu`), kerangka fungsi CRUD + Search, serta pengambilan **Screenshot No. 1**. |
 
 ---
 
@@ -51,6 +52,7 @@ Sistem menerapkan aturan perhitungan biaya yang diadaptasi dari logika kasir UTS
 ### 1. Definisi Interface Utama (`TransaksiTiket`)
 Seluruh data transaksi pemesanan tiket disimpan dalam array `daftarTransaksi: TransaksiTiket[]` dengan struktur tipe data berikut:
 
+```typescript
 type Kategori = 'VIP' | 'CAT 1' | 'Festival';
 type Fase = 'Presale' | 'Normal' | '-';
 type Metode = 'Transfer Bank' | 'E-Wallet' | 'Kartu Kredit';
